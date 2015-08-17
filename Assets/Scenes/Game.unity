@@ -161,7 +161,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3449028}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 427840235}
+        m_MethodName: ActionMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &3449028
@@ -401,7 +412,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 135752793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 427840235}
+        m_MethodName: BuildMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &135752793
@@ -462,7 +484,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 95, y: 222}
+  m_AnchoredPosition: {x: 95, y: 217}
   m_SizeDelta: {x: 159, y: 23}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &248481753
@@ -641,6 +663,7 @@ GameObject:
   - 4: {fileID: 427840233}
   - 114: {fileID: 427840232}
   - 114: {fileID: 427840234}
+  - 114: {fileID: 427840235}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -682,6 +705,8 @@ MonoBehaviour:
   actionMenu: 0
   buildArmory: 0
   buildScoutSchool: 0
+  buildmenu: {fileID: 1668596354}
+  actionmenu: {fileID: 1629679869}
 --- !u!4 &427840233
 Transform:
   m_ObjectHideFlags: 0
@@ -716,6 +741,18 @@ MonoBehaviour:
   FarmScore: {fileID: 332443206}
   ArmoryScore: {fileID: 1701373415}
   scores: {fileID: 427840232}
+--- !u!114 &427840235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 427840231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27ef1ce2bab22e44b1c51300cfb6a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 427840232}
 --- !u!1 &429924357
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +959,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 476231179}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 427840235}
+        m_MethodName: BuyFighter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &476231179
@@ -1338,7 +1386,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 95, y: 200.099976}
+  m_AnchoredPosition: {x: 95, y: 195}
   m_SizeDelta: {x: 159, y: 23}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &773866195
@@ -2399,7 +2447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1629679870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2438,7 +2486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1668596355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2492,7 +2540,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 95, y: 245}
+  m_AnchoredPosition: {x: 95, y: 240}
   m_SizeDelta: {x: 159, y: 23}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1681001343
@@ -3313,7 +3361,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2022050660}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 427840235}
+        m_MethodName: BuyWorker
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2022050660
@@ -3374,7 +3433,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 95, y: 268}
+  m_AnchoredPosition: {x: 95, y: 263}
   m_SizeDelta: {x: 159, y: 23}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2052201618

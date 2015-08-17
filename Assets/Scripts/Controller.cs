@@ -9,9 +9,31 @@ public class Controller : MonoBehaviour {
     public bool buyWorker, buyFighter, makeChild, buildFarm, doScavage, doEducate,
                 buildMenu, actionMenu, buildArmory, buildScoutSchool;
 
+    public GameObject buildmenu, actionmenu;
+
 
 	// Use this for initialization
+
+    void ButtonUpdate()
+    {
+        if (buildMenu == true)
+        {
+            actionMenu = false;
+            buildmenu.SetActive(true);
+            actionmenu.SetActive(false);
+        }
+        if (actionMenu == true)
+        {
+            buildMenu = false;
+            buildmenu.SetActive(false);
+            actionmenu.SetActive(true);
+        }
+    }
+
+
 	void Start () {
+        //actionMenu = true;
+        //buildMenu = false;
         Cash = 1000;
         
 	 
@@ -19,6 +41,8 @@ public class Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //ButtonUpdate();
 	
 	}
 }
