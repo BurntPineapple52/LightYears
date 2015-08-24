@@ -6,8 +6,12 @@ public class Controller : MonoBehaviour {
     public int Cash, AP, Food, MP, Year, Workers, Fighters, Scouts, Children,
                Farm, School, Armory, ScoutSchool;
 
-    public bool buyWorker, buyFighter, makeChild, buildFarm, doScavage, doEducate,
-                buildMenu, actionMenu, buildArmory, buildScoutSchool;
+    /*public bool makeWorker, buyFighter, makeChild, buildFarm, doScavage, doEducate,
+    *            buildMenu, actionMenu, buildArmory, buildScoutSchool;
+    * Probably delete, made bools when I didn't need them*/
+
+    public bool buildMenu, actionMenu, newTurn;
+
 
     public GameObject buildmenu, actionmenu;
 
