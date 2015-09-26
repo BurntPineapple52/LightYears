@@ -1,52 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Controller is the master object in the game.  Handles majority of variables, 
 public class Controller : MonoBehaviour {
 
-    public int Cash, AP, Food, MP, Year, Workers, Fighters, Scouts, Children,
-               Farm, School, Armory, ScoutSchool;
-
-    /*public bool makeWorker, buyFighter, makeChild, buildFarm, doScavage, doEducate,
-    *            buildMenu, actionMenu, buildArmory, buildScoutSchool;
-    * Probably delete, made bools when I didn't need them*/
-
-    public bool buildMenu, actionMenu, newTurn;
-
+    public int Cash, AP, Food, MP, Year, Workers, Workspace, Fighters, Fightspace, 
+               Scouts, Scoutspace, Children, Childspace, Farm, School, Armory, ScoutSchool;
 
     public GameObject buildmenu, actionmenu;
 
 
-	// Use this for initialization
-
-    void ButtonUpdate()
-    {
-        if (buildMenu == true)
-        {
-            actionMenu = false;
-            buildmenu.SetActive(true);
-            actionmenu.SetActive(false);
-        }
-        if (actionMenu == true)
-        {
-            buildMenu = false;
-            buildmenu.SetActive(false);
-            actionmenu.SetActive(true);
-        }
-    }
-
-
+    // Use this for initialization
 	void Start () {
-        //actionMenu = true;
-        //buildMenu = false;
         Cash = 1000;
+        Workers = 4;
+        Food = 10;
+        AP = Workers * 2;
         
 	 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-        //ButtonUpdate();
-	
+        
 	}
 }

@@ -2,12 +2,18 @@
 using System.Collections;
 using UnityEngine.UI;
 
+// UIUpdater keeps the UI up to date by grabbing data from Controller
+// and throwing it into text fields kept below
 public class sUIUpdater : MonoBehaviour {
 
-
-    public Text CashScore, APScore, FoodScore, MPScore,
+    // Holds textfields placed in UI.  Assigned in scene.
+    public Text CashScore, APScore, FoodScore, MPScore, 
                 YearScore, WorkerScore, ScoutScore,
-                ChildrenScore, FarmScore, ArmoryScore;
+                ChildrenScore, FarmScore, ArmoryScore,
+                FighterScore, ScoutSchoolScore, 
+                SchoolScore;
+
+    // Sets Controller as source of the info.  Assigned in scene.
     public Controller scores;
 
 	// Use this for initialization
@@ -19,17 +25,20 @@ public class sUIUpdater : MonoBehaviour {
 	void Update () {
 
         // Making sure scores/counts update in UI
-        CashScore.text = scores.Cash.ToString();
-        APScore.text = scores.AP.ToString();
+        CashScore.text = scores.Cash.ToString(); //These are static scoreholders
+        APScore.text = scores.AP.ToString();    //they're in background sprite
         FoodScore.text = scores.Food.ToString();
         MPScore.text = scores.MP.ToString();
         YearScore.text = scores.Year.ToString();
-        WorkerScore.text = "Workers: " + scores.Workers.ToString();
-        ScoutScore.text = "Scouts: " + scores.Scouts.ToString();
-        ChildrenScore.text = "Children: " + scores.Children.ToString();
-        FarmScore.text = "Farms: " + scores.Farm.ToString();
-        ArmoryScore.text = "Armory: " + scores.Armory.ToString();
 
+        WorkerScore.text = "Workers: " + scores.Workers.ToString(); // These are dynamic scoreholders, 
+        ScoutScore.text = "Scouts: " + scores.Scouts.ToString();    // require "Nameofscore: " string 
+        ChildrenScore.text = "Children: " + scores.Children.ToString(); // before score to work properly
+        FarmScore.text = "Farms: " + scores.Farm.ToString();
+        ArmoryScore.text = "Armories: " + scores.Armory.ToString();
+        FighterScore.text = "Fighters: " + scores.Fighters.ToString();
+        ScoutSchoolScore.text = "Scout Schools: " + scores.Farm.ToString();
+        SchoolScore.text = "Schools: " + scores.Armory.ToString();
 
 	
 	}
