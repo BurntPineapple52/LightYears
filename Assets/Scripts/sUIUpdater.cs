@@ -11,7 +11,7 @@ public class sUIUpdater : MonoBehaviour {
                 YearScore, WorkerScore, ScoutScore,
                 ChildrenScore, FarmScore, ArmoryScore,
                 FighterScore, ScoutSchoolScore, 
-                SchoolScore;
+                SchoolScore, HousePodScore;
 
     // Sets Controller as source of the info.  Assigned in scene.
     public Controller scores;
@@ -37,8 +37,9 @@ public class sUIUpdater : MonoBehaviour {
         FarmScore.text = "Farms: " + scores.Farm.ToString();
         ArmoryScore.text = "Armories: " + scores.Armory.ToString();
         FighterScore.text = "Fighters: " + scores.Fighters.ToString();
-        ScoutSchoolScore.text = "Scout Schools: " + scores.Farm.ToString();
-        SchoolScore.text = "Schools: " + scores.Armory.ToString();
+        ScoutSchoolScore.text = "Scout Schools: " + scores.ScoutSchool.ToString();
+        SchoolScore.text = "Schools: " + scores.School.ToString();
+        HousePodScore.text = "House Pod: " + scores.HousePod.ToString();
 
 	
 	}

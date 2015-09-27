@@ -5,20 +5,28 @@ using System.Collections;
 public class Controller : MonoBehaviour {
 
     public int Cash, AP, Food, MP, Year, Workers, Workspace, Fighters, Fightspace, 
-               Scouts, Scoutspace, Children, Childspace, Farm, School, Armory, ScoutSchool;
+               Scouts, Scoutspace, Children, Schoolspace, Farm, School, Armory, ScoutSchool,
+               HousePod, Housespace, Farmturns, exploreMin, exploreMax;
 
     public GameObject buildmenu, actionmenu;
 
 
     // Use this for initialization
 	void Start () {
-        Cash = 1000;
+
+        Cash = 2000;
         Workers = 4;
         Food = 10;
         AP = Workers * 2;
-        
-	 
-	}
+        Farm = 1;
+        Farmturns = Farm;
+        exploreMin = 250;
+        exploreMax = 750;
+        School = 1;
+        Schoolspace = 4;
+        HousePod = 2;
+        Workspace = 4;
+    }
 	
 	// Update is called once per frame
 	void Update () {
