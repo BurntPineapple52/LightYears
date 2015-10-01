@@ -11,7 +11,7 @@ public class sUIUpdater : MonoBehaviour {
                 YearScore, WorkerScore, ScoutScore,
                 ChildrenScore, FarmScore, ArmoryScore,
                 FighterScore, ScoutSchoolScore, 
-                SchoolScore, HousePodScore;
+                MineScore, HousePodScore;
 
     // Sets Controller as source of the info.  Assigned in scene.
     public Controller scores;
@@ -33,12 +33,11 @@ public class sUIUpdater : MonoBehaviour {
 
         WorkerScore.text = "Workers: " + scores.Workers.ToString(); // These are dynamic scoreholders, 
         ScoutScore.text = "Scouts: " + scores.Scouts.ToString();    // require "Nameofscore: " string 
-        ChildrenScore.text = "Children: " + scores.Children.ToString(); // before score to work properly
         FarmScore.text = "Farms: " + scores.Farm.ToString();
         ArmoryScore.text = "Armories: " + scores.Armory.ToString();
         FighterScore.text = "Fighters: " + scores.Fighters.ToString();
         ScoutSchoolScore.text = "Scout Schools: " + scores.ScoutSchool.ToString();
-        SchoolScore.text = "Schools: " + scores.School.ToString();
+        MineScore.text = "Mines: " + scores.Mines.ToString();
         HousePodScore.text = "House Pod: " + scores.HousePod.ToString();
 
 	

@@ -9,40 +9,76 @@ public class sButtonFun : MonoBehaviour {
                                   // functions below are same as
                                   // in game button names
 
+
     public void NextYear() // Next Year button
     {   
         controller.Year += 1; // go forard a year
-        controller.Food -= controller.Workers + controller.Fighters * 2 + controller.Scouts * 2
-                           + controller.Children;//Remove food per unit
+        controller.Food -= controller.Workers + controller.Fighters * 2 
+                           + controller.Scouts * 2;//Remove food per unit
         controller.AP = controller.Workers * 2;  
         controller.Farmturns = controller.Farm; // Refreshes how many times you can farm a year 
                                                 // based on how many farms you have.  
+        controller.mineturns = controller.Mines;
+        FoodCheck(); // Kills suckas if food is below 000 :O
+
+       
+    }
+
+    public void FoodCheck() // if food drops below 0, rand unit is killed off until
+    {                       // >= 0
+        if (controller.Food < 0)
+        {
+            while (controller.Food < 0)
+            {
+                switch (Random.Range(0, 3)) // picks between 0, 1, and 2
+                {
+                    case 0:
+                        if (controller.Workers - 1 >= 0) // if not enough worker to kill, skip
+                        {
+                            controller.Workers -= 1;
+                            controller.Food += 1;
+                        }
+                        break;
+                    case 1:
+                        if (controller.Scouts - 1 >= 0)
+                        {
+                            controller.Scouts -= 1;
+                            controller.Food += 2;
+                        }
+                        break;
+                    case 2:
+                        if (controller.Fighters - 1 >= 0)
+                        {
+                            controller.Fighters -= 1;
+                            controller.Food += 2;
+                        }
+                        break;
+                }
+            }
+            controller.Food = 0; // ensures food is at 0 after the killing stops.
+        }
     }
 
     public void MakeWorker() // Make worker button
     {
-        if (controller.AP - 2 >= 0 && controller.Children - 1 >= 0 && // Making sure you can pay for the goods
+        if (controller.AP - 2 >= 0 && // Making sure you can pay for the goods
             controller.Cash - 250 >= 0 && controller.Workspace - 1 >= 0)
         {
             controller.AP -= 2; // Everything that happens if you can pay.  Below follow same format.
-            controller.Children -= 1;
             controller.Cash -= 250;
-            controller.Schoolspace += 1;
             controller.Workspace -= 1;
             controller.Workers += 1;
         }
         
     }
 
-    public void MakeChild() // Make child button
+    public void Mine() // Mine Action
     {
-        if (controller.AP - 4 >= 0 && controller.Cash - 250 >= 0 && 
-            controller.Schoolspace - 1 >= 0)
+        if (controller.AP - 2 >= 0 && controller.mineturns - 1 >= 0)
         {
-            controller.Cash -= 250;
-            controller.AP -= 4;
-            controller.Children += 1;
-            controller.Schoolspace -= 1;
+            controller.Cash += 200;
+            controller.AP -= 2;
+            controller.mineturns -= 1;
         }
         
     }
@@ -93,23 +129,23 @@ public class sButtonFun : MonoBehaviour {
 
     }
 
-    public void buildschool() // Build school button  
+    public void buildmine() // Build mine button  
     {
-        if (controller.AP - 10 >= 0 && controller.Cash - 1000 >= 0)
+        if (controller.AP - 5 >= 0 && controller.Cash - 500 >= 0)
         {
-            controller.Cash -= 1000;
-            controller.AP -= 10;
-            controller.Schoolspace += 4;
-            controller.School += 1;
+            controller.Cash -= 500;
+            controller.AP -= 5;
+            controller.mineturns += 4;
+            controller.Mines += 1;
         }
     }
 
     public void buildpod() // Build HousePod button  
     {
-        if (controller.AP - 10 >= 0 && controller.Cash - 1000 >= 0)
+        if (controller.AP - 4 >= 0 && controller.Cash - 500 >= 0)
         {
-            controller.Cash -= 1000;
-            controller.AP -= 10;
+            controller.Cash -= 500;
+            controller.AP -= 4 ;
             controller.Workspace += 4;
             controller.HousePod += 1;
         }
@@ -128,10 +164,10 @@ public class sButtonFun : MonoBehaviour {
 
     public void buildarmory() // Build HousePod button  
     {
-        if (controller.AP - 10 >= 0 && controller.Cash - 1000 >= 0)
+        if (controller.AP - 8 >= 0 && controller.Cash - 750 >= 0)
         {
-            controller.Cash -= 1000;
-            controller.AP -= 10;
+            controller.Cash -= 750;
+            controller.AP -= 8;
             controller.Fightspace += 4;
             controller.Armory += 1;
         }
@@ -139,20 +175,13 @@ public class sButtonFun : MonoBehaviour {
 
     public void buildfarm() // Build Farm button  
     {
-        if (controller.AP - 10 >= 0 && controller.Cash - 1000 >= 0)
+        if (controller.AP - 5 >= 0 && controller.Cash - 500 >= 0)
         {
             controller.Cash -= 500;
             controller.AP -= 5;
             controller.Farm += 1;
         }
     }
-
-
-
-
-
-
-
 
     public void ActionMenu()  // Only selectable by "Go To Action Menu" button
     {

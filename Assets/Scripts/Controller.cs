@@ -5,8 +5,8 @@ using System.Collections;
 public class Controller : MonoBehaviour {
 
     public int Cash, AP, Food, MP, Year, Workers, Workspace, Fighters, Fightspace, 
-               Scouts, Scoutspace, Children, Schoolspace, Farm, School, Armory, ScoutSchool,
-               HousePod, Housespace, Farmturns, exploreMin, exploreMax;
+               Scouts, Scoutspace, Mines, Schoolspace, Farm, School, Armory, ScoutSchool,
+               HousePod, Housespace, Farmturns, exploreMin, exploreMax, mineturns;
 
     public GameObject buildmenu, actionmenu;
 
@@ -22,8 +22,7 @@ public class Controller : MonoBehaviour {
         Farmturns = Farm;
         exploreMin = 250;
         exploreMax = 750;
-        School = 1;
-        Schoolspace = 4;
+        Mines = 1;
         HousePod = 2;
         Workspace = 4;
     }
