@@ -8,7 +8,7 @@ public class Controller : MonoBehaviour {
     public int Cash, AP, Food, MP, Year, Workers, Workspace, Fighters, Fightspace, 
                Scouts, Scoutspace, Mines, Schoolspace, Farm, School, Armory, ScoutSchool,
                HousePod, Housespace, Farmturns, exploreMin, exploreMax, mineturns, Wall, 
-               enemyspawnrate, enemymp;
+               enemyspawnrate, enemymp, tempfighters;
 
     public GameObject buildmenu, actionmenu, fightscreen, deathscreen,
                       explorebtn, farmbtn, minebtn, makeworkbtn,
@@ -16,13 +16,15 @@ public class Controller : MonoBehaviour {
                       buildscoutschoolbtn, buildarmorybtn,
                       buildmenubtn, actionmenubtn, nextyearbtn,
                       buildminebtn, buildhousebtn, buildwallbtn,
-                      scorescreen;
-
-    public Button[] butscript;
+                      scorescreen, buyscreen, discchanger;
+    
+    public Font pixel;
 
 
     // Use this for initialization
 	void Start () {
+
+        pixel.material.mainTexture.filterMode = FilterMode.Point; // hopefully makes text less blurry
 
         Cash = 2000;
         Workers = 4;
@@ -41,6 +43,11 @@ public class Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        /*if (buyscreen.activeSelf) // for closing buying info screen
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            }*/  // 
+        pixel.material.mainTexture.filterMode = FilterMode.Point;
 	}
+    
 }
