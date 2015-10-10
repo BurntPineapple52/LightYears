@@ -150,10 +150,10 @@ public class sFun : MonoBehaviour {
                 break;
 
             case 3: //Explore
-                if (controller.AP - 10 >= 0)
+                if (controller.AP - 6 >= 0)
                 {
                     controller.Cash += Random.Range(controller.exploreMin, controller.exploreMax);
-                    controller.AP -= 10; // ^^^ random range to increase based on num of scouts
+                    controller.AP -= 6; // ^^^ random range to increase based on num of scouts
                 }
                 break;
 
@@ -195,21 +195,21 @@ public class sFun : MonoBehaviour {
                 break;
 
             case 8: // Build HousePod
-                if (controller.AP - 4 >= 0 && controller.Cash - 500 >= 0)
+                if (controller.AP - 5 >= 0 && controller.Cash - 500 >= 0)
                 {
                     controller.Cash -= 500;
-                    controller.AP -= 4;
+                    controller.AP -= 5;
                     controller.Workspace += 4;
                     controller.HousePod += 1;
                 }
                 break;
 
-            case 9: //Build Farm
-                if (controller.AP - 2 >= 0 && controller.Farmturns - 1 >= 0)
+            case 9: //Build Factory
+                if (controller.AP - 5 >= 0 && controller.Cash - 500 >= 0)
                 {
-                    controller.Food += 4;
-                    controller.AP -= 2;
-                    controller.Farmturns -= 1;
+                    controller.Cash -= 500;
+                    controller.AP -= 5;
+                    controller.Farm += 1;
                 }
                 break;
 
@@ -238,28 +238,27 @@ public class sFun : MonoBehaviour {
     public void EnemySpawner()
     {
         int year = controller.Year;  // so I don't have to write so much
-        int enemymp = controller.enemymp;  // same
         GameObject screen = controller.fightscreen; // yee
-        int roll = Random.Range(0, 100); // figure out if something wills spawn
+        int roll = Random.Range(0, 100); // figure out if something will spawn
         if (roll <= controller.enemyspawnrate)  // if it does spawn
         {
             screen.SetActive(true);
             scoreboardgroup.blocksRaycasts = false;
             if (year <= 10) // higher the year, higher the strength increase 
             {               // mp increases are perm
-                enemymp += Random.Range(0, 4);
+                controller.enemymp += Random.Range(0, 4);
             }
             else if (year > 10 && year <= 20)
             {
-                enemymp += Random.Range(4, 12);
+                controller.enemymp += Random.Range(4, 12);
             }
             else if (year > 20 && year <= 30)
             {
-                enemymp += Random.Range(8, 18);
+                controller.enemymp += Random.Range(8, 18);
             }
             else if (year > 40 && year <= 50)
             {
-                enemymp += Random.Range(12, 24);
+                controller.enemymp += Random.Range(12, 24);
             }
         }
         if (controller.enemyspawnrate < 75) // highest spawn rate
@@ -270,7 +269,7 @@ public class sFun : MonoBehaviour {
 
     public void AddWorker()// add worker button on fight screen
     {
-        if (controller.Workers - 1 >= 0)
+        if (controller.AP - 2 >= 0)
         {
             controller.MP += 1;
             controller.tempfighters += 1;
@@ -289,6 +288,7 @@ public class sFun : MonoBehaviour {
         }
         controller.MP -= controller.tempfighters;
         controller.tempfighters = 0;
+        controller.enemymp = controller.Year; //Reset back to base after fight
     }
 
     public void MakeWorker() // Make worker button

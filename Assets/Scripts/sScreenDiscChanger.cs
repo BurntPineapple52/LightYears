@@ -43,8 +43,8 @@ public class sScreenDiscChanger : MonoBehaviour {
             case 3:
                 title.text = "Explore";
                 description.text = "Search the area for profitable materials! " +
-                "Buying Scouts increases Cash return";
-                buycost.text = "ACTION:\n" + "-10 AP";
+                "Buying Scouts increases Cash return. 250-750 CASH base";
+                buycost.text = "ACTION:\n" + "-6 AP";
                 upgradecost.text = "UPGRADE:\n" + "TBD";
                 break;
             case 4:
@@ -57,8 +57,8 @@ public class sScreenDiscChanger : MonoBehaviour {
             case 5:
                 title.text = "Mine";
                 description.text = "Mine the earth for valuable resources! " +
-                "Each Mine can only be used once a year.";
-                buycost.text = "BUY:\n" + "-2 AP \n -250 CASH";
+                "Each Mine can only be used once a year. +250 CASH";
+                buycost.text = "BUY:\n" + "-2 AP";
                 upgradecost.text = "UPGRADE:\n" + "TBD";
                 break;
             case 6:
@@ -86,14 +86,14 @@ public class sScreenDiscChanger : MonoBehaviour {
                 title.text = "Batt. Factory";
                 description.text = "Keep your Bots running " +
                 "Allows extra Battery production each year.";
-                buycost.text = "BUY:\n" + "-2 AP \n -250 CASH";
+                buycost.text = "BUY:\n" + "-5 AP \n -500 CASH";
                 upgradecost.text = "UPGRADE:\n" + "TBD";
                 break;
             case 10:
                 title.text = "Armory";
                 description.text = "Allows FighterBots to be purchased " +
                 "Each Armory can support 4 Fighters";
-                buycost.text = "BUY:\n" + "-2 AP \n -250 CASH";
+                buycost.text = "BUY:\n" + "-8 AP \n -750 CASH";
                 upgradecost.text = "UPGRADE:\n" + "TBD";
                 break;
             case 11:

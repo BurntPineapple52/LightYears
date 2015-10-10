@@ -36,7 +36,7 @@ public class sUIUpdater : MonoBehaviour {
 
         WorkerScore.text = "Workers: " + scores.Workers.ToString(); // These are dynamic scoreholders, 
         ScoutScore.text = "Scouts: " + scores.Scouts.ToString();    // require "Nameofscore: " string 
-        FarmScore.text = "Farms: " + scores.Farm.ToString();
+        FarmScore.text = "Factories: " + scores.Farm.ToString();
         ArmoryScore.text = "Armories: " + scores.Armory.ToString();
         FighterScore.text = "Fighters: " + scores.Fighters.ToString();
         ScoutSchoolScore.text = "Scout Schools: " + scores.ScoutSchool.ToString();
